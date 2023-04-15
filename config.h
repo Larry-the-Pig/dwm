@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *firefox[] = { "firefox", NULL };
 static const char *filemgr[] = { "pcmanfm", NULL };
@@ -136,20 +136,20 @@ static const Button buttons[] = {
  * Xresources preferences to load at startuo
  */
 ResourcePref resources[] = {
-	{ "font",		STRING,  &font },
-	{ "dmenufont",          STRING,  &dmenufont },
-	{ "background",         STRING,  &normbgcolor },
-	{ "color8",    		STRING,  &normbordercolor },
-	{ "foreground",         STRING,  &normfgcolor },
-	{ "foreground",         STRING,  &selbgcolor },
-	{ "foreground",		STRING,  &selbordercolor },
-	{ "background",         STRING,  &selfgcolor },
-	{ "borderpx",           INTEGER, &borderpx },
-	{ "snap",		INTEGER, &snap },
-	{ "showbar",		INTEGER, &showbar },
-	{ "topbar",		INTEGER, &topbar },
-	{ "nmaster",		INTEGER, &nmaster },
-	{ "resizehints",	INTEGER, &resizehints },
-	{ "mfact",		FLOAT,   &mfact },
+		{ "font",               STRING,  &font },
+		{ "dmenufont",          STRING,  &dmenufont },
+		{ "normbgcolor",        STRING,  &normbgcolor },
+		{ "normbordercolor",    STRING,  &normbordercolor },
+		{ "normfgcolor",        STRING,  &normfgcolor },
+		{ "selbgcolor",         STRING,  &selbgcolor },
+		{ "selbordercolor",     STRING,  &selbordercolor },
+		{ "selfgcolor",         STRING,  &selfgcolor },
+		{ "borderpx",          	INTEGER, &borderpx },
+		{ "snap",   		INTEGER, &snap },
+		{ "showbar",          	INTEGER, &showbar },
+		{ "topbar",          	INTEGER, &topbar },
+		{ "nmaster",          	INTEGER, &nmaster },
+		{ "resizehints",       	INTEGER, &resizehints },
+		{ "mfact",		FLOAT,   &mfact },
 };
 
