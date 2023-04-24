@@ -62,7 +62,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgco
 static const char *termcmd[]  = { "st", NULL };
 static const char *firefox[] = { "firefox", NULL };
 static const char *filemgr[] = { "pcmanfm", NULL };
-static const char *emacs[] = { "emacs", NULL };
+static const char *lock[] = { "slock", NULL };
 
 /* volume commands */
 #include <X11/XF86keysym.h>
@@ -78,7 +78,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,		XK_w,	   spawn,	   {.v = firefox } },
 	{ MODKEY|ShiftMask,		XK_f,	   spawn,	   {.v = filemgr } },
-	{ MODKEY|ShiftMask,		XK_e,	   spawn,	   {.v = emacs } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -112,7 +111,7 @@ static const Key keys[] = {
 	{ 0,				XF86XK_AudioRaiseVolume,	spawn,          {.v = upvol   } },
 	{ 0,				XF86XK_AudioLowerVolume,	spawn,          {.v = downvol } },
 	{ 0,				XF86XK_AudioMute,		spawn,          {.v = mutevol } },
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,           {.v = lock } },
 };
 
 /* button definitions */
